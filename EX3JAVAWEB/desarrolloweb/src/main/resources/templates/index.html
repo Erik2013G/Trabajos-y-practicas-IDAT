@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Pedidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Lista de Pedidos</h1>
+    
+    <!-- Formulario de búsqueda -->
+    <form class="d-flex mb-3" method="get" th:action="@{/pedidos}">
+        <input class="form-control me-2" type="search" name="buscar" placeholder="Buscar por cliente o producto" value="" aria-label="Buscar">
+        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+    </form>
+    
+    <a href="pedidos/Crear" class="btn btn-primary mb-3">Nuevo Pedido</a>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.idPedido}"></td>
+                <td th:text="${pedido.cliente}"></td>
+                <td th:text="${pedido.producto}"></td>
+                <td th:text="${pedido.cantidad}"></td>
+                <td th:text="${pedido.fechaPedido}"></td>
+                <td th:text="${pedido.estado}"></td>
+                <td th:text="${pedido.precio}"></td>
+                <td>
+                    <a th:href="@{/pedidos/{id}/editar (id=${pedido.idPedido})}" class="btn btn-warning btn-sm">Editar</a>
+                    <form th:action="@{/pedidos/{id}/eliminar (id=${pedido.idPedido})}" method="post" style="display:inline;">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
