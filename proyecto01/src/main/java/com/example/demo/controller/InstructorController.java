@@ -27,7 +27,7 @@ public class InstructorController {
     public String listarInstructores(Model model, @RequestParam(value = "buscar", required = false) String buscar) {
         List<Instructor> instructor;
         if (buscar != null && !buscar.isEmpty()) {
-            instructor = instructorservice.buscarPorClienteOProducto(buscar);
+            instructor = instructorservice.buscarPorInstructor(buscar);
         } else {
             instructor = instructorservice.findAll();
         }
@@ -51,7 +51,7 @@ public class InstructorController {
 
     // Guardar un nuevo instructor
     @PostMapping("/guardar")
-    public String guardarInstructor(@ModelAttribute("instructor") Instructor instructor, RedirectAttributes redirectAttributes) {
+    public String guardarInstructor(@ModelAttribute("nombreprof") Instructor instructor, RedirectAttributes redirectAttributes) {
         try {
             instructorservice.save(instructor);
             redirectAttributes.addFlashAttribute("mensaje", "Instructor creado exitosamente.");

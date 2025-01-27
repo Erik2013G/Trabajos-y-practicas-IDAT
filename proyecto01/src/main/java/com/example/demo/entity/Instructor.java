@@ -1,23 +1,30 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "instructor", uniqueConstraints = {
+    @UniqueConstraint(columnNames = "correo") // Evita correos duplicados
+})
 public class Instructor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // ID auto-incremental en la base de datos
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID auto-incremental
     private Long id;
 
-    private String nombreprof;  // Nombre del instructor
-    private String correo;       // Correo electrónico del instructor
-    private String telefono;     // Teléfono del instructor
-    private String especialidad; // Especialidad del instructor
+    @Column(name = "nombre_prof", nullable = false, length = 100) // Nombre del instructor
+    private String nombreprof;
 
-    // Constructor sin parámetros
+    @Column(name = "correo", nullable = false, length = 100, unique = true) // Correo único
+    private String correo;
+
+    @Column(name = "telefono", length = 20) // Teléfono
+    private String telefono;
+
+    @Column(name = "especialidad", length = 100) // Especialidad
+    private String especialidad;
+
+    // Constructor vacío
     public Instructor() {
     }
 
@@ -29,7 +36,7 @@ public class Instructor {
         this.especialidad = especialidad;
     }
 
-    // Getters y setters
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -70,14 +77,15 @@ public class Instructor {
         this.especialidad = especialidad;
     }
 
-    // Método toString para depuración (opcional)
+    // Método toString para depuración
     @Override
     public String toString() {
-        return "Instructor{id=" + id +
-               ", nombreprof='" + nombreprof + '\'' +
-               ", correo='" + correo + '\'' +
-               ", telefono='" + telefono + '\'' +
-               ", especialidad='" + especialidad + '\'' +
-               '}';
+        return "Instructor{" +
+                "id=" + id +
+                ", nombreprof='" + nombreprof + '\'' +
+                ", correo='" + correo + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", especialidad='" + especialidad + '\'' +
+                '}';
     }
 }

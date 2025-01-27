@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.entity.Instructor;
 
 public interface InstructorRepo extends JpaRepository <Instructor,Long> {
-	List<Instructor> findByClienteContainingOrProductoContaining(String nombreprof);
+	List<Instructor> findByNombreprofContaining(String nombreprof);
 }

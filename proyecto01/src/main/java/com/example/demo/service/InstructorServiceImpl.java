@@ -24,17 +24,16 @@ public class InstructorServiceImpl implements InstructorService {
 	}
 
 	@Override
-	public Instructor save(Instructor instructor) {
-		return instructorrepo.save(instructor);	}
-
+	public Instructor save(Instructor nombreprof) {
+		return instructorrepo.save(nombreprof);
+    }
 	@Override
 	public void deleteById(Long id) {
 		instructorrepo.deleteById(id);
 	}
 
 	@Override
-	public List<Instructor> buscarPorClienteOProducto(String buscar) {
-        return instructorrepo.findByClienteContainingOrProductoContaining(buscar);
-
+	public List<Instructor> buscarPorInstructor(String buscar) {
+		return instructorrepo.findByNombreprofContaining(buscar);
 	}
 }

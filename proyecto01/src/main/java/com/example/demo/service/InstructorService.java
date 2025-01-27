@@ -7,7 +7,7 @@ import com.example.demo.entity.Instructor;
 public interface InstructorService {
 List<Instructor> findAll();
 Instructor findById(Long id);
-Instructor save(Instructor instructor);
+Instructor save(Instructor nombreprof);
 void deleteById(Long id);
-List<Instructor> buscarPorClienteOProducto(String buscar);
+List<Instructor> buscarPorInstructor (String buscar);
 }
