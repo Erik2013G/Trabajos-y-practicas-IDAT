@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FormularioAlumno",
+            "request": "launch",
+            "mainClass": "com.Proyectosjava.FormularioAlumno",
+            "projectName": "Proyecto"
+        },
+        {
+            "type": "java",
+            "name": "Proyecto",
+            "request": "launch",
+            "mainClass": "com.Proyectosjava.Proyecto",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "pe.idat.semana5.demo.DemoApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "pe.idat.clase5.demo.DemoApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-Proyecto01Application<proyecto01>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
