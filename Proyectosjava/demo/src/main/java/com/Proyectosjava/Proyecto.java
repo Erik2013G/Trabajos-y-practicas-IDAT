@@ -100,22 +100,23 @@ public class Proyecto {
 
             crearTablaUsuarios();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(frame, "Error al conectar a la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Error al conectar a la base de datos: " + e.getMessage(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
 
     private void crearTablaUsuarios() {
         String sql = "CREATE TABLE IF NOT EXISTS Usuarios (" +
-                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
-                     "nombre VARCHAR(100) NOT NULL, " +
-                     "usuario VARCHAR(50) UNIQUE NOT NULL, " +
-                     "contrasena VARCHAR(255) NOT NULL, " +
-                     "correo VARCHAR(100) UNIQUE NOT NULL, " +
-                     "rol ENUM('admin', 'usuario') DEFAULT 'usuario', " +
-                     "fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
-                     ");";
+                "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                "nombre VARCHAR(100) NOT NULL, " +
+                "usuario VARCHAR(50) UNIQUE NOT NULL, " +
+                "contrasena VARCHAR(255) NOT NULL, " +
+                "correo VARCHAR(100) UNIQUE NOT NULL, " +
+                "rol ENUM('admin', 'usuario') DEFAULT 'usuario', " +
+                "fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                ");";
         try (Connection connection = dataSource.getConnection();
-             Statement stmt = connection.createStatement()) {
+                Statement stmt = connection.createStatement()) {
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             System.out.println("Error al crear la tabla 'Usuarios': " + e.getMessage());
@@ -127,30 +128,71 @@ public class Proyecto {
         String password = new String(passwordField.getPassword());
 
         if (username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(frame, "Por favor, complete todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Por favor, complete todos los campos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         String query = "SELECT contrasena FROM Usuarios WHERE usuario = ?";
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+                PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     String hashedPassword = resultSet.getString("contrasena");
                     if (BCrypt.checkpw(password, hashedPassword)) {
-                        JOptionPane.showMessageDialog(frame, "Inicio de sesión exitoso!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(frame, "Inicio de sesión exitoso!", "Éxito",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        mostrarDashboard(); // Llamamos al método para cambiar la interfaz
                     } else {
-                        JOptionPane.showMessageDialog(frame, "Contraseña incorrecta.", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(frame, "Contraseña incorrecta.", "Error",
+                                JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
                     JOptionPane.showMessageDialog(frame, "Usuario no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(frame, "Error al verificar las credenciales: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Error al verificar las credenciales: " + e.getMessage(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void mostrarDashboard() {
+        frame.getContentPane().removeAll(); // Elimina todos los componentes anteriores
+        frame.setTitle("Panel de Control"); // Cambia el título de la ventana
+
+        JPanel panelDashboard = new JPanel();
+        panelDashboard.setLayout(new BorderLayout());
+        panelDashboard.setBackground(Color.LIGHT_GRAY);
+
+        JLabel label = new JLabel("Bienvenido al sistema", SwingConstants.CENTER);
+        label.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        label.setForeground(new Color(0, 51, 102));
+
+        JButton btnCerrar = new JButton("Cerrar sesión");
+        btnCerrar.setPreferredSize(new Dimension(150, 40));
+        btnCerrar.setBackground(new Color(255, 51, 51));
+        btnCerrar.setForeground(Color.WHITE);
+        btnCerrar.addActionListener(e -> System.exit(0)); // Cierra la aplicación
+        btnCerrar.addActionListener(e -> mostrarLogin()); // Regresar a la pantalla de inicio de sesión
+
+        panelDashboard.add(label, BorderLayout.CENTER);
+        panelDashboard.add(btnCerrar, BorderLayout.SOUTH);
+
+        frame.getContentPane().add(panelDashboard);
+        frame.revalidate(); // Refresca la ventana
+        frame.repaint();
+    }
+
+    private void mostrarLogin() {
+        frame.getContentPane().removeAll();
+        frame.setTitle("Login");
+
+        initialize(); // Vuelve a cargar los componentes originales
+        frame.revalidate();
+        frame.repaint();
     }
 
     private void abrirNuevoFormularioRegistro() {
@@ -173,7 +215,8 @@ public class Proyecto {
         JPasswordField txtContrasena = new JPasswordField();
 
         JButton btnRegistrar = new JButton("Registrar");
-        btnRegistrar.addActionListener(e -> registrarUsuario(txtNombre.getText(), txtUsuario.getText(), new String(txtContrasena.getPassword()), txtCorreo.getText()));
+        btnRegistrar.addActionListener(e -> registrarUsuario(txtNombre.getText(), txtUsuario.getText(),
+                new String(txtContrasena.getPassword()), txtCorreo.getText()));
 
         registroFrame.add(lblNombre);
         registroFrame.add(txtNombre);
@@ -191,15 +234,16 @@ public class Proyecto {
 
     private void registrarUsuario(String nombre, String usuario, String contrasena, String email) {
         if (nombre.isEmpty() || usuario.isEmpty() || contrasena.isEmpty() || email.isEmpty()) {
-            JOptionPane.showMessageDialog(frame, "Por favor, complete todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Por favor, complete todos los campos", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         String hashedPassword = BCrypt.hashpw(contrasena, BCrypt.gensalt());
         String query = "INSERT INTO Usuarios (nombre, usuario, contrasena, correo) VALUES (?, ?, ?, ?)";
-        
+
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+                PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, nombre);
             statement.setString(2, usuario);
@@ -209,7 +253,9 @@ public class Proyecto {
 
             JOptionPane.showMessageDialog(frame, "Registro exitoso!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(frame, "Error al registrar usuario: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "Error al registrar usuario: " + e.getMessage(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
+        // frame.dispose();
     }
 }
