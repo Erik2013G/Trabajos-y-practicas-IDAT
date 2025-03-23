@@ -31,11 +31,12 @@ public class JwtUtil {
 
     private Claims extractAllClaims(String token) {
         return Jwts.parserBuilder()
-            .setSigningKey(SECRET_KEY) // Clave secreta para verificar la firma del token
+            .setSigningKey(SECRET_KEY)
             .build()
-            .parseClaimsJws(token) // Método correcto para parsear el token JWT
-            .getBody(); // Obtener los claims (datos) del token
+            .parseClaimsJws(token)
+            .getBody();
     }
+
     private Boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
