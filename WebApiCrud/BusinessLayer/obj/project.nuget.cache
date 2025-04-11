@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ti9CeDaknWM=",
+  "dgSpecHash": "owKkD0nOHGg=",
   "success": false,
-  "projectFilePath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
@@ -18,7 +18,7 @@
     {
       "code": "NU1101",
       "level": "Error",
-      "message": "Unable to find package ../DataAccess/DataAccess.csproj. No packages exist with this id in source(s): nuget.org",
+      "message": "Unable to find package ../DataAccess/DataAccess.csproj. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
       "libraryId": "../DataAccess/DataAccess.csproj",
       "targetGraphs": [
         "net8.0"

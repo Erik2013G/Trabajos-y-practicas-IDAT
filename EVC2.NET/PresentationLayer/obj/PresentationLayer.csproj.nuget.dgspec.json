@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj": {}
+    "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Dev Erik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev Erik\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gerik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -41,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -62,26 +69,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Dev Erik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev Erik\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gerik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -99,7 +112,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -140,37 +154,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj": {
+    "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj",
         "projectName": "PresentationLayer",
-        "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj",
-        "packagesPath": "C:\\Users\\Dev Erik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\PresentationLayer\\obj\\",
+        "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\PresentationLayer\\PresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\PresentationLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev Erik\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gerik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Dev Erik\\Desktop\\Proyectos-Idat\\EVC2.NET\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\EVC2.NET\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -184,7 +204,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -226,7 +247,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

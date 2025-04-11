@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DesarrollowebApplication",
+            "request": "launch",
+            "mainClass": "com.examen3java.desarrolloweb.DesarrollowebApplication",
+            "projectName": "com.examen3java-desarrolloweb"
+        },
+        {
+            "type": "java",
             "name": "DemoApplication",
             "request": "launch",
             "mainClass": "com.cruzdelnorte.demo.DemoApplication",
