@@ -1,6 +1,5 @@
 package com.examen3java.desarrolloweb.Entity;
 
-
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -74,8 +73,18 @@ public class Queja {
         SERVICIO, VIAJE, FACTURACION, EQUIPAJE, OTROS
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private PrioridadQueja prioridad; // Nueva propiedad
+
+// Enum para las prioridades
+    public enum PrioridadQueja {
+        BAJA, MEDIA, ALTA, CRITICA
+    }
+
     // Constructores
-    public Queja() {}
+    public Queja() {
+    }
 
     public Queja(Cliente cliente, String descripcion, TipoQueja tipo) {
         this.cliente = cliente;
@@ -172,6 +181,14 @@ public class Queja {
 
     public void setTipo(TipoQueja tipo) {
         this.tipo = tipo;
+    }
+
+    public PrioridadQueja getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(PrioridadQueja prioridad) {
+        this.prioridad = prioridad;
     }
 
     @Override

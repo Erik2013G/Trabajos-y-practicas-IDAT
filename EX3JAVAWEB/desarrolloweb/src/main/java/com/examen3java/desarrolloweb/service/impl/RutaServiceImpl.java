@@ -1,14 +1,15 @@
 package com.examen3java.desarrolloweb.service.impl;
 
-import com.examen3java.desarrolloweb.model.Ruta;
-import com.examen3java.desarrolloweb.repository.RutaRepository;
-import com.examen3java.desarrolloweb.service.IRutaService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.examen3java.desarrolloweb.Entity.Ruta;
+import com.examen3java.desarrolloweb.repository.RutaRepository;
+import com.examen3java.desarrolloweb.service.IRutaService;
 
 @Service
 @Transactional

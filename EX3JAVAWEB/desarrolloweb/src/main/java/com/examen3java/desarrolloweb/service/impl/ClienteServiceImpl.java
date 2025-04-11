@@ -1,14 +1,15 @@
 package com.examen3java.desarrolloweb.service.impl;
 
-import com.examen3java.desarrolloweb.model.Cliente;
-import com.examen3java.desarrolloweb.repository.ClienteRepository;
-import com.examen3java.desarrolloweb.service.IClienteService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.examen3java.desarrolloweb.Entity.Cliente;
+import com.examen3java.desarrolloweb.repository.ClienteRepository;
+import com.examen3java.desarrolloweb.service.IClienteService;
 
 @Service
 @Transactional

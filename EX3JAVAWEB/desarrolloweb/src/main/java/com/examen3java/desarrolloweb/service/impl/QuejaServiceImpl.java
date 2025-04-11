@@ -1,14 +1,16 @@
 package com.examen3java.desarrolloweb.service.impl;
 
-import com.examen3java.desarrolloweb.model.Queja;
-import com.examen3java.desarrolloweb.repository.QuejaRepository;
-import com.examen3java.desarrolloweb.service.IQuejaService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.examen3java.desarrolloweb.Entity.Queja;
+import com.examen3java.desarrolloweb.Entity.Queja.EstadoQueja;
+import com.examen3java.desarrolloweb.repository.QuejaRepository;
+import com.examen3java.desarrolloweb.service.IQuejaService;
 
 @Service
 @Transactional
@@ -56,7 +58,7 @@ public class QuejaServiceImpl implements IQuejaService {
     public Queja guardar(Queja queja) {
         validarQueja(queja);
         if (queja.getId() == null) {
-            queja.setEstado("PENDIENTE");
+            queja.setEstado(EstadoQueja.PENDIENTE); // Usa el valor del enum
         }
         return quejaRepository.save(queja);
     }
@@ -83,4 +85,4 @@ public class QuejaServiceImpl implements IQuejaService {
             throw new IllegalArgumentException("Debe especificar una prioridad");
         }
     }
-} 
+}

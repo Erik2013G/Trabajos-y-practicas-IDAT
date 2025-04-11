@@ -1,4 +1,4 @@
-package com.examen3java.desarrolloweb.service;
+package com.examen3java.desarrolloweb.service.impl;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.examen3java.desarrolloweb.Entity.Viaje;
 import com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje;
 import com.examen3java.desarrolloweb.repository.ViajeRepository;
+import com.examen3java.desarrolloweb.service.ViajeService;
 
 import jakarta.persistence.EntityNotFoundException;
 

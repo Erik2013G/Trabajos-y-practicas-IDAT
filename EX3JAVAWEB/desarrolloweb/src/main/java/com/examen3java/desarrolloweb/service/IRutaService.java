@@ -1,8 +1,9 @@
 package com.examen3java.desarrolloweb.service;
 
-import com.examen3java.desarrolloweb.model.Ruta;
 import java.util.List;
 import java.util.Optional;
+
+import com.examen3java.desarrolloweb.Entity.Ruta;
 
 public interface IRutaService {
     List<Ruta> listarTodas();

@@ -3,16 +3,16 @@ package com.examen3java.desarrolloweb.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.examen3java.desarrolloweb.Entity.Pasaje;
-import com.examen3java.desarrolloweb.service.PasajeService;
+import com.examen3java.desarrolloweb.service.IPasajeService;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/pasajes")
 public class PasajeController {
 
-    private final PasajeService pasajeService;
+    private final IPasajeService pasajeService;
 
-    public PasajeController(PasajeService pasajeService) {
+    public PasajeController(IPasajeService pasajeService) {
         this.pasajeService = pasajeService;
     }
 
@@ -41,4 +41,10 @@ public class PasajeController {
         pasajeService.eliminarPasaje(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/buscar-por-asiento/{numeroAsiento}")
+public ResponseEntity<Pasaje> buscarPorNumeroAsiento(@PathVariable String numeroAsiento) {
+    return pasajeService.buscarPasajePorNumeroAsiento(numeroAsiento)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+}
 }

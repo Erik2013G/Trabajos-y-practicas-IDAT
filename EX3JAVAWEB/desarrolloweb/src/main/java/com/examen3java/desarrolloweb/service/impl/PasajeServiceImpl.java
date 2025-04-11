@@ -1,6 +1,7 @@
 package com.examen3java.desarrolloweb.service.impl;
 
-import com.examen3java.desarrolloweb.model.Pasaje;
+import com.examen3java.desarrolloweb.Entity.Pasaje;
+import com.examen3java.desarrolloweb.Entity.Pasaje.EstadoPasaje;
 import com.examen3java.desarrolloweb.repository.PasajeRepository;
 import com.examen3java.desarrolloweb.service.IPasajeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,13 +54,20 @@ public class PasajeServiceImpl implements IPasajeService {
         return pasajeRepository.findByNumeroAsiento(numeroAsiento);
     }
 
+    public Optional<Pasaje> buscarPasajePorNumeroAsiento(String numeroAsiento) {
+        return pasajeRepository.findByNumeroAsiento(numeroAsiento);
+    }
+
+// Método guardar corregido
     @Override
     public Pasaje guardar(Pasaje pasaje) {
-        validarPasaje(pasaje);
+        validarPasaje(pasaje); // Asegúramos de que este método exista
+
         if (pasaje.getId() == null) {
             pasaje.setFechaCompra(LocalDateTime.now());
-            pasaje.setEstado("RESERVADO");
+            pasaje.setEstado(EstadoPasaje.RESERVADO);
         }
+
         return pasajeRepository.save(pasaje);
     }
 
@@ -94,4 +102,4 @@ public class PasajeServiceImpl implements IPasajeService {
             throw new IllegalArgumentException("El precio debe ser mayor a 0");
         }
     }
-} 
+}

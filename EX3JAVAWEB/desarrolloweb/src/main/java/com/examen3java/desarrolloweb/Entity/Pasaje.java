@@ -36,13 +36,13 @@ public class Pasaje {
     private Viaje viaje;
 
     @NotBlank(message = "El número de asiento es obligatorio")
-    @Column(nullable = false, length = 10)
-    private String numeroAsiento;
+    @Column(nullable = false)
+    private Integer numeroAsiento;
 
     @NotNull(message = "El precio es obligatorio")
     @DecimalMin(value = "0.01", message = "El precio debe ser mayor a 0")
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal precio;
+    private Integer precio;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -50,6 +50,9 @@ public class Pasaje {
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime fechaEmision = LocalDateTime.now();
+
+    @Column(nullable = true)
+    private LocalDateTime fechaCompra;
 
     public void setFechaEmision(LocalDateTime fechaEmision) {
         this.fechaEmision = fechaEmision;
@@ -60,13 +63,14 @@ public class Pasaje {
     }
 
     // Constructores
-    public Pasaje() {}
+    public Pasaje() {
+    }
 
     public Pasaje(Cliente cliente, Viaje viaje, String numeroAsiento, BigDecimal precio) {
         this.cliente = cliente;
         this.viaje = viaje;
-        this.numeroAsiento = numeroAsiento;
-        this.precio = precio;
+        this.numeroAsiento = Integer.valueOf(numeroAsiento);
+        this.precio = precio.intValue();
     }
 
     // Métodos de negocio
@@ -103,19 +107,19 @@ public class Pasaje {
         this.viaje = viaje;
     }
 
-    public String getNumeroAsiento() {
+    public Integer getNumeroAsiento() {
         return numeroAsiento;
     }
 
-    public void setNumeroAsiento(String numeroAsiento) {
+    public void setNumeroAsiento(Integer numeroAsiento) {
         this.numeroAsiento = numeroAsiento;
     }
 
-    public BigDecimal getPrecio() {
+    public Integer getPrecio() {
         return precio;
     }
 
-    public void setPrecio(BigDecimal precio) {
+    public void setPrecio(Integer precio) {
         this.precio = precio;
     }
 
@@ -131,6 +135,13 @@ public class Pasaje {
         return fechaEmision;
     }
 
+    public LocalDateTime getFechaCompra() {
+        return fechaCompra;
+    }
+
+    public void setFechaCompra(LocalDateTime fechaCompra) {
+        this.fechaCompra = fechaCompra;
+    }
     @Override
     public String toString() {
         return "Pasaje #" + id + " - " + estado;
