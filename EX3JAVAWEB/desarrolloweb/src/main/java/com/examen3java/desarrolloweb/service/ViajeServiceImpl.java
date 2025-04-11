@@ -62,13 +62,12 @@ public class ViajeServiceImpl implements ViajeService {
         viajeRepository.save(viaje);
     }
 
-    @Override
     @Transactional(readOnly = true)
     public List<Viaje> buscarPorClienteOViajes(String buscar) {
         if (buscar == null || buscar.trim().isEmpty()) {
             throw new IllegalArgumentException("El término de búsqueda no puede estar vacío");
         }
-        return viajeRepository.findByClienteNombres(buscar);
+        return viajeRepository.(buscar);
     }
 
     @Override

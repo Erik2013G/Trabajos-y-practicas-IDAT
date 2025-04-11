@@ -1,6 +1,6 @@
 package com.examen3java.desarrolloweb.service;
 
-import com.examen3java.desarrolloweb.model.Bus;
+import com.examen3java.desarrolloweb.Entity.Bus;
 import com.examen3java.desarrolloweb.repository.BusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

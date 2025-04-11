@@ -1,10 +1,11 @@
 package com.examen3java.desarrolloweb.repository;
 
-import com.examen3java.desarrolloweb.model.Ruta;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.examen3java.desarrolloweb.Entity.Ruta;
 
 @Repository
 public interface RutaRepository extends JpaRepository<Ruta, Long> {

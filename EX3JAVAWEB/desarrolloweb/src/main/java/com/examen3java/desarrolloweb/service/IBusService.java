@@ -1,8 +1,9 @@
 package com.examen3java.desarrolloweb.service;
 
-import com.examen3java.desarrolloweb.model.Bus;
 import java.util.List;
 import java.util.Optional;
+
+import com.examen3java.desarrolloweb.Entity.Bus;
 
 public interface IBusService {
     List<Bus> listarTodos();

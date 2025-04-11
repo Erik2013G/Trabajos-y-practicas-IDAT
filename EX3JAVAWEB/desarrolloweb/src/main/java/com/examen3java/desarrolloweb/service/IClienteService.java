@@ -1,8 +1,9 @@
 package com.examen3java.desarrolloweb.service;
 
-import com.examen3java.desarrolloweb.model.Cliente;
 import java.util.List;
 import java.util.Optional;
+
+import com.examen3java.desarrolloweb.Entity.Cliente;
 
 public interface IClienteService {
     List<Cliente> listarTodos();

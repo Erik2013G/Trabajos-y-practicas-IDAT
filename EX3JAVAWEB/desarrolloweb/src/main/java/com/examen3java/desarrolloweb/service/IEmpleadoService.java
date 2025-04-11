@@ -1,8 +1,9 @@
 package com.examen3java.desarrolloweb.service;
 
-import com.examen3java.desarrolloweb.model.Empleado;
 import java.util.List;
 import java.util.Optional;
+
+import com.examen3java.desarrolloweb.Entity.Empleado;
 
 public interface IEmpleadoService {
     List<Empleado> listarTodos();

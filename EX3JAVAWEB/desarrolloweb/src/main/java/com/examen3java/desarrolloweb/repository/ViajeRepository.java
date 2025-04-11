@@ -10,6 +10,11 @@ import com.examen3java.desarrolloweb.Entity.Viaje;
 
 @Repository
 public interface ViajeRepository extends JpaRepository<Viaje, Long> {
+    List<Viaje> findByClienteId(Long clienteId);
+    List<Viaje> findByBusPlaca(String busPlaca);
+    List<Viaje> findByRutaNombre(String rutaNombre);
+    List<Viaje> findByRutaOrigen(String rutaOrigen);
+    List<Viaje> findByRutaDestino(String rutaDestino);
     List<Viaje> findByRutaId(Long rutaId);
     List<Viaje> findByEstado(Viaje.EstadoViaje estado);
     List<Viaje> findByFechaHoraSalidaBetween(LocalDateTime inicio, LocalDateTime fin);
