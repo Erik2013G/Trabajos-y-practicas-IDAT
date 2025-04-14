@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Proveedor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-danger">¿Estás seguro de eliminar este proveedor?</h2>
+    
+    <div class="card p-4 mt-4">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>ID:</strong> <span th:text="${proveedor.idDistribuidor}"></span></li>
+            <li class="list-group-item"><strong>Nombre Distribuidor:</strong> <span th:text="${proveedor.nombreDistribuidor}"></span></li>
+            <li class="list-group-item"><strong>Contacto:</strong> <span th:text="${proveedor.contacto}"></span></li>
+            <li class="list-group-item"><strong>Email:</strong> <span th:text="${proveedor.email}"></span></li>
+            <li class="list-group-item"><strong>Teléfono:</strong> <span th:text="${proveedor.telefono}"></span></li>
+            <li class="list-group-item"><strong>Dirección:</strong> <span th:text="${proveedor.direccion}"></span></li>
+            <li class="list-group-item"><strong>País:</strong> <span th:text="${proveedor.pais}"></span></li>
+            <li class="list-group-item"><strong>Tipo Proveedor:</strong> <span th:text="${proveedor.tipoProveedor}"></span></li>
+            <li class="list-group-item"><strong>RUC:</strong> <span th:text="${proveedor.ruc}"></span></li>
+            <li class="list-group-item"><strong>Estado:</strong> <span th:text="${proveedor.estado}"></span></li>
+            <li class="list-group-item"><strong>Fecha de Registro:</strong> <span th:text="${proveedor.fechaRegistro}"></span></li>
+            <li class="list-group-item"><strong>Monto Crédito:</strong> <span th:text="${proveedor.montoCredito}"></span></li>
+        </ul>
+    </div>
+
+    <form th:action="@{/api/proveedores/{id}(id=${proveedor.idDistribuidor})}" method="post" class="mt-4">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a th:href="@{/api/proveedores}" class="btn btn-secondary ms-2">Cancelar</a>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

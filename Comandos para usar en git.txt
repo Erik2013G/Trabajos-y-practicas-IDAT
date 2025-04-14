@@ -170,3 +170,20 @@ git bisect start
 git bisect bad
 git bisect good <commit_hash>
 Realiza una búsqueda binaria entre commits para localizar el commit donde ocurrió un bug.
+
+# Agrega al .gitignore (si no lo has hecho)
+echo ".env" >> .gitignore
+
+# Haz commit del .gitignore
+git add .gitignore
+git commit -m "Agrega .env al gitignore"
+
+Si el archivo ya estaba commitado antes (pero ahora no aparece):
+
+bash
+Copy
+# Busca en el historial
+git log --diff-filter=D --summary | grep .env
+
+# Si aparece, restáuralo primero
+git checkout HEAD~1 -- .env  # Sustituye 1 por el commit adecuado

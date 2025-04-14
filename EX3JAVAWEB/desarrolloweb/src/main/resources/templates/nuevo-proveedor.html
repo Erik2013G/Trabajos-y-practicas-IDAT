@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Proveedor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Agregar Nuevo Proveedor</h2>
+    <form th:action="@{/api/proveedores}" method="post" th:object="${proveedor}" class="row g-3">
+        <div class="col-md-6">
+            <label for="nombredistribuidor" class="form-label">Nombre del Distribuidor</label>
+            <input type="text" id="nombredistribuidor" th:field="*{nombredistribuidor}" class="form-control" placeholder="Ingrese el nombre" required>
+        </div>
+        <div class="col-md-6">
+            <label for="contacto" class="form-label">Contacto</label>
+            <input type="text" id="contacto" th:field="*{contacto}" class="form-control" placeholder="Ingrese el contacto" required>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="col-md-6">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" id="telefono" th:field="*{telefono}" class="form-control" placeholder="Número de teléfono" required>
+        </div>
+        <div class="col-md-6">
+            <label for="pais" class="form-label">País</label>
+            <input type="text" id="pais" th:field="*{pais}" class="form-control" placeholder="Ingrese el país" required>
+        </div>
+        <div class="col-md-6">
+            <label for="tipoproveedor" class="form-label">Tipo de Proveedor</label>
+            <input type="text" id="tipoproveedor" th:field="*{tipoproveedor}" class="form-control" placeholder="Ej: Local/Internacional" required>
+        </div>
+        <div class="col-md-6">
+            <label for="ruc" class="form-label">RUC</label>
+            <input type="text" id="ruc" th:field="*{ruc}" class="form-control" placeholder="Ingrese el RUC" required>
+        </div>
+        <div class="col-md-6">
+            <label for="estado" class="form-label">Estado</label>
+            <select id="estado" th:field="*{estado}" class="form-select" required>
+                <option value="" disabled>Seleccione el estado</option>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="fechaRegistro" class="form-label">Fecha de Registro</label>
+            <input type="date" id="fechaRegistro" th:field="*{fechaRegistro}" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label for="montoCredito" class="form-label">Monto Crédito</label>
+            <input type="number" id="montoCredito" th:field="*{montoCredito}" class="form-control" placeholder="Monto de crédito" step="0.01" required>
+        </div>
+        <div class="col-12">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" id="direccion" th:field="*{direccion}" class="form-control" placeholder="Dirección completa" required>
+        </div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a th:href="@{/api/proveedores}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
