@@ -2991,11 +2991,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
+      "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
       "projectName": "PresentationLayerCrudApi",
-      "projectPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
+      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
       "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gerik\\OneDrive\\Escritorio\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\obj\\",
+      "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3028,7 +3028,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -3078,7 +3078,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
