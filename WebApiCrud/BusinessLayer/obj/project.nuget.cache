@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "I+AUGtp4khQ=",
+  "dgSpecHash": "3E+O5sgOVnA=",
   "success": false,
-  "projectFilePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "NU1604",
       "level": "Warning",
       "message": "Project dependency ../DataAccess/DataAccess.csproj does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.",
-      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "filePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
       "libraryId": "../DataAccess/DataAccess.csproj",
       "targetGraphs": [
         ".NETCoreApp,Version=v8.0"
@@ -21,8 +21,8 @@
       "code": "NU1101",
       "level": "Error",
       "message": "Unable to find package ../DataAccess/DataAccess.csproj. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
-      "filePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "filePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
       "libraryId": "../DataAccess/DataAccess.csproj",
       "targetGraphs": [
         "net8.0"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj": {}
+    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj": {
+    "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
+        "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
         "projectName": "PresentationLayerCrudApi",
-        "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
+        "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\PresentationLayerCrudApi\\PresentationLayerCrudApi.csproj",
         "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\PresentationLayerCrudApi\\obj\\",
+        "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\PresentationLayerCrudApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

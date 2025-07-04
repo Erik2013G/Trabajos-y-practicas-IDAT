@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r7AUdkUpkes=",
+  "dgSpecHash": "8Akd8aGbnw4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gerik\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\gerik\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
