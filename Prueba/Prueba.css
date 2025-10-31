@@ -1,183 +1,209 @@
-/* ====== ESTILOS GENERALES ====== */
+/* === ESTILOS GENERALES === */
 body {
-  color: #1a1a1a;
-  background-color: #e0f2f1; /* menta suave */
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #e0f2f1; /* Fondo menta suave */
+  color: #222;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
-/* Enlaces */
-a {
-  color: #00796b; /* verde petróleo */
-  text-decoration: none;
-  transition: color 0.2s ease;
+/* === CONTENEDOR PRINCIPAL === */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
 }
 
-a:hover {
-  color: #004d40;
-  text-decoration: underline;
-}
-
-/* ====== FORMULARIO DE BÚSQUEDA ====== */
-form[name="form1"] {
-  margin: 0;
-}
-
-form[name="form1"] input[type="text"] {
-  position: absolute;
-  width: 228px;
-  left: 262px;
-  top: 114px;
-  z-index: 5;
-  padding: 6px 8px;
-  border: 1px solid #009688;
-  border-radius: 4px;
+/* === RUTA DE NAVEGACIÓN === */
+nav {
   font-size: 14px;
+  margin-bottom: 15px;
 }
 
-form[name="form1"] input[type="submit"] {
-  position: absolute;
-  left: 494px;
-  top: 110px;
-  z-index: 6;
-  background-color: #009688;
-  color: #fff;
-  border: none;
-  padding: 7px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-weight: 600;
+nav a {
+  text-decoration: none;
+  color: #00796b;
+  transition: color 0.3s;
 }
 
-form[name="form1"] input[type="submit"]:hover {
-  background-color: #00796b;
+nav a:hover {
+  text-decoration: underline;
+  color: #004d40;
 }
 
-/* ====== TEXTOS ====== */
-.wpmd {
-  font-size: 15px;
-  font-family: "Segoe UI", Arial, Helvetica, Sans-Serif;
-  color: #212121;
+/* === TITULOS === */
+h1, h2 {
+  color: #0d47a1;
 }
 
-.ws6 { font-size: 8px; }
-.ws7 { font-size: 9.3px; }
-.ws8 { font-size: 11px; }
-.ws9 { font-size: 12px; }
-.ws10 { font-size: 13px; }
-.ws11 { font-size: 15px; }
-.ws12 { font-size: 16px; }
-.ws14 { font-size: 19px; }
-.ws16 { font-size: 21px; }
-.ws18 { font-size: 24px; }
-.ws20 { font-size: 27px; }
-.ws22 { font-size: 29px; }
-.ws24 { font-size: 32px; }
-.ws26 { font-size: 35px; }
-.ws28 { font-size: 37px; }
-.ws36 { font-size: 48px; }
-.ws48 { font-size: 64px; }
-.ws72 { font-size: 96px; }
+/* === TARJETAS (SECCIONES) === */
+.card {
+  background: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-/* ====== TABLAS ====== */
+/* === GRID DE PRODUCTO === */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.product-info {
+  flex: 1 1 250px;
+}
+
+.product-info h3 {
+  color: #00796b;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  font-size: 18px;
+  margin: 0 0 15px;
+}
+
+.product-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+/* ✅ AJUSTE IMPORTANTE: Imágenes nítidas y proporcionadas */
+.product-image img {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  height: auto; /* mantiene proporción */
+  object-fit: contain; /* evita estiramiento */
+  max-height: 400px; /* límite en pantallas grandes */
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* === TABLAS === */
 table {
-  border-collapse: collapse;
-  background-color: #ffffff;
   width: 100%;
-  margin: 10px 0;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
 table td {
-  border: 1px solid #b2dfdb;
-  padding: 8px 10px;
-  vertical-align: top;
-  font-family: Verdana, sans-serif;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+table td:first-child {
+  background-color: #e0f7fa;
+  font-weight: bold;
+  width: 45%;
+}
+
+/* === BARRA DE BÚSQUEDA === */
+.search-bar {
+  background-color: #b2dfdb;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #80cbc4;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  width: 280px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  outline: none;
   font-size: 14px;
-  color: #212121;
 }
 
-/* ====== DIVS GENERALES ====== */
-div, ul, ol {
-  margin-top: 0;
-  margin-bottom: 0;
+.search-bar input[type="submit"] {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* ====== IMÁGENES ====== */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
+.search-bar input[type="submit"]:hover {
+  background-color: #004d40;
 }
 
-/* ====== RESPONSIVE DESIGN ====== */
-@media (max-width: 1024px) {
-  iframe {
-    width: 100% !important;
-    left: 0 !important;
-  }
-
-  form[name="form1"] input[type="text"] {
-    position: relative;
-    width: 70%;
-    left: 15%;
-    top: 10px;
-  }
-
-  form[name="form1"] input[type="submit"] {
-    position: relative;
-    left: 15%;
-    top: 15px;
-  }
-
-  #text1, #image17, #image25, #text4, #table1 {
-    position: relative !important;
-    left: 0 !important;
-    width: 90% !important;
-    margin: 10px auto !important;
-    top: auto !important;
-  }
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d40;
+  color: white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #80cbc4;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .wpmd {
-    font-size: 13px;
+  main {
+    padding: 10px;
   }
 
-  table td {
-    display: block;
-    width: 100%;
-  }
-
-  iframe {
-    height: 300px !important;
-  }
-
-  #text1 {
+  .product-info p {
     text-align: center;
   }
 
-  #image17 {
-    display: flex;
-    justify-content: center;
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  form[name="form1"] input[type="text"],
-  form[name="form1"] input[type="submit"] {
-    width: 80%;
-    left: 10%;
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
 
-  form[name="form1"] input[type="submit"] {
-    margin-top: 8px;
+  .product-image img {
+    max-height: 300px;
   }
 }
