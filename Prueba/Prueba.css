@@ -1,0 +1,183 @@
+/* ====== ESTILOS GENERALES ====== */
+body {
+  color: #1a1a1a;
+  background-color: #e0f2f1; /* menta suave */
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Enlaces */
+a {
+  color: #00796b; /* verde petróleo */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #004d40;
+  text-decoration: underline;
+}
+
+/* ====== FORMULARIO DE BÚSQUEDA ====== */
+form[name="form1"] {
+  margin: 0;
+}
+
+form[name="form1"] input[type="text"] {
+  position: absolute;
+  width: 228px;
+  left: 262px;
+  top: 114px;
+  z-index: 5;
+  padding: 6px 8px;
+  border: 1px solid #009688;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+form[name="form1"] input[type="submit"] {
+  position: absolute;
+  left: 494px;
+  top: 110px;
+  z-index: 6;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+}
+
+form[name="form1"] input[type="submit"]:hover {
+  background-color: #00796b;
+}
+
+/* ====== TEXTOS ====== */
+.wpmd {
+  font-size: 15px;
+  font-family: "Segoe UI", Arial, Helvetica, Sans-Serif;
+  color: #212121;
+}
+
+.ws6 { font-size: 8px; }
+.ws7 { font-size: 9.3px; }
+.ws8 { font-size: 11px; }
+.ws9 { font-size: 12px; }
+.ws10 { font-size: 13px; }
+.ws11 { font-size: 15px; }
+.ws12 { font-size: 16px; }
+.ws14 { font-size: 19px; }
+.ws16 { font-size: 21px; }
+.ws18 { font-size: 24px; }
+.ws20 { font-size: 27px; }
+.ws22 { font-size: 29px; }
+.ws24 { font-size: 32px; }
+.ws26 { font-size: 35px; }
+.ws28 { font-size: 37px; }
+.ws36 { font-size: 48px; }
+.ws48 { font-size: 64px; }
+.ws72 { font-size: 96px; }
+
+/* ====== TABLAS ====== */
+table {
+  border-collapse: collapse;
+  background-color: #ffffff;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+table td {
+  border: 1px solid #b2dfdb;
+  padding: 8px 10px;
+  vertical-align: top;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  color: #212121;
+}
+
+/* ====== DIVS GENERALES ====== */
+div, ul, ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ====== IMÁGENES ====== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 1024px) {
+  iframe {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  form[name="form1"] input[type="text"] {
+    position: relative;
+    width: 70%;
+    left: 15%;
+    top: 10px;
+  }
+
+  form[name="form1"] input[type="submit"] {
+    position: relative;
+    left: 15%;
+    top: 15px;
+  }
+
+  #text1, #image17, #image25, #text4, #table1 {
+    position: relative !important;
+    left: 0 !important;
+    width: 90% !important;
+    margin: 10px auto !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .wpmd {
+    font-size: 13px;
+  }
+
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  iframe {
+    height: 300px !important;
+  }
+
+  #text1 {
+    text-align: center;
+  }
+
+  #image17 {
+    display: flex;
+    justify-content: center;
+  }
+
+  form[name="form1"] input[type="text"],
+  form[name="form1"] input[type="submit"] {
+    width: 80%;
+    left: 10%;
+  }
+
+  form[name="form1"] input[type="submit"] {
+    margin-top: 8px;
+  }
+}
