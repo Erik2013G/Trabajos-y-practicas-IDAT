@@ -470,31 +470,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerik\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ErikAnthony\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\CRUD_MVC_NCAPAS\\DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\ErikAnthony\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\CRUD_MVC_NCAPAS\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gerik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ErikAnthony\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -513,7 +506,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -540,7 +533,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

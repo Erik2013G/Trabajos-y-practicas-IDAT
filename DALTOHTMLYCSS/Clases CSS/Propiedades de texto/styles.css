@@ -1,0 +1,13 @@
+p{
+    color: red;
+    font-family: 'Lucida Sanz';
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: justify;
+    text-decoration: underline;
+    line-height: 2;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    word-wrap: break-all;
+}

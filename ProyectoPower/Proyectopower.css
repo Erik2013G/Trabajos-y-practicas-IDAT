@@ -1,69 +1,135 @@
-body{
-  /* margin-top: 100px; */
-  background-color: rgba(32, 205, 168, 0.875);
-  font-family: "Courier New";
-  padding: 10px 50px;
-  box-shadow:2px 2px 10px yellow transparent;
-} 
-
-header{
-  display: flex;
+/* === ESTILOS GENERALES === */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+  color: #222;
+  line-height: 1.6;
+  padding-bottom: 50px;
 }
-h1{
-  font-size: 1.5em;
-  font-weight: bold;
+
+/* === ENCABEZADO === */
+header.header {
   text-align: center;
-  /* padding: 10px 50px; */
-  box-shadow:2px 2px 10px yellow transparent;
-  /* background-color:floralwhite; */
-  color :darkmagenta;
-  margin-top: 0;
+  padding: 40px 20px;
 }
 
-p{
-  font-size: 16px;
-  font-weight: 400px;
-  font-family:'Courier New', Courier, monospace;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra en el texto del párrafo */
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #d32f2f;
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-.contenedor, .contenedor2 {
-  display: flex;
-  flex-direction:row;
-  /* justify-content: space-around; */
-  align-items: center;
-  /* text-align: center; */
-  /* flex-wrap: wrap; */
-  /* width:100%; */
-  /* gap: 20px; */
-  /* transform: scale(1.05); */
-  /* transition: transform 0.3s ease-in-out; */
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2e2e2e;
+  text-shadow: 1px 2px 5px rgba(0,0,0,0.1);
 }
 
-.contenedor img, .contenedor2 img {
-  max-width: 100%;
-  height: auto;
+/* === ESTILOS DE TEXTO GENERAL === */
+h2, h3 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 700;
+  color: #37474f;
+  margin-top: 30px;
+  text-shadow: 1px 2px 8px rgba(0,0,0,0.1);
+}
+
+p {
+  font-size: 1.1rem;
+  color: #263238;
+  margin: 15px 0;
+  line-height: 1.7;
+  text-align: justify;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* === GALERÍA === */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  background: #ffffffcc;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.ranger-img {
+  width: 100%;
+  max-width: 230px;
+  height: 230px;
   object-fit: cover;
-  border:1px solid black;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* Sombra más suave y difusa */
-  /* transition: transform 0.5s ease-in-out; */
-  margin: 5px;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
 }
 
-/* .contenedor img:hover, .contenedor2 img:hover {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 20px rgba(0,0,0,0.5); 
-} */
+/* === COLORES PERSONALIZADOS POR RANGER === */
+.red-ranger h2 { 
+  color: #d32f2f;
+  text-shadow: 2px 2px 8px rgba(200,0,0,0.3);
+}
 
-@media screen and (max-width: 468px) {
-  .contenedor img, .contenedor2 img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+.blue-ranger h2 { 
+  color: #1565c0;
+  text-shadow: 2px 2px 8px rgba(0,0,200,0.3);
+}
+
+.yellow-ranger h2 { 
+  color: #f9a825;
+  text-shadow: 2px 2px 8px rgba(200,150,0,0.3);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
   }
-  h1, h3, p {
-      font-size: 1em;
+
+  p {
+    font-size: 1rem;
+  }
+
+  .ranger-img {
+    max-width: 180px;
+    height: 180px;
   }
 }
+/* === CONTENEDORES DE IMÁGENES === */
+.contenedor,
+.contenedor2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin: 15px auto;}
+
+/* === IMÁGENES IGUALES === */
+.contenedor img,
+.contenedor2 img {
+  width: 360px;
+  height: 280px;
+  object-fit: cover;     /* Las recorta sin deformarlas */
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  border: 3px solid #fff;
+
+  
+}
+

@@ -10,31 +10,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerik\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ErikAnthony\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
-      "packagesPath": "C:\\Users\\gerik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gerik\\Desktop\\Trabajos-y-practicas\\WebApiCrud\\BusinessLayer\\obj\\",
+      "projectPath": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\BusinessLayer.csproj",
+      "packagesPath": "C:\\Users\\ErikAnthony\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ErikAnthony\\Desktop\\Trabajos-y-practicas-IDAT\\WebApiCrud\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gerik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ErikAnthony\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -53,7 +46,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -80,29 +73,15 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
     {
-      "code": "NU1604",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Project dependency ../DataAccess/DataAccess.csproj does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.",
-      "libraryId": "../DataAccess/DataAccess.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v8.0"
-      ]
-    },
-    {
-      "code": "NU1101",
+      "code": "NU1015",
       "level": "Error",
-      "message": "Unable to find package ../DataAccess/DataAccess.csproj. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
-      "libraryId": "../DataAccess/DataAccess.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
+      "message": "The following PackageReference item(s) do not have a version specified: ../DataAccess/DataAccess.csproj"
     }
   ]
 }

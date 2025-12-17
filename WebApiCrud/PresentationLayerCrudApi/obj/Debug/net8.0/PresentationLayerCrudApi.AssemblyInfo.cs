@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PresentationLayerCrudApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a6db07e66d264c743f943eabbea527a5e838d41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ff39be7f03d48129feb78c1d2bc45e94923aaa2")]
 [assembly: System.Reflection.AssemblyProductAttribute("PresentationLayerCrudApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PresentationLayerCrudApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

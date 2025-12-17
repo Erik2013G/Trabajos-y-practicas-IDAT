@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Viajes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Gestión de Viajes</h1>
+    
+    <!-- Mensajes de alerta -->
+    <div th:if="${mensaje}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span th:text="${mensaje}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    <div th:if="${error}" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <span th:text="${error}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    <!-- Filtros de búsqueda -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <select class="form-select" id="estadoFiltro">
+                <option value="">Todos los estados</option>
+                <option th:each="estado : ${T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).values()}"
+                        th:value="${estado}" th:text="${estado}"></option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="date" class="form-control" id="fechaFiltro">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary" onclick="aplicarFiltros()">Filtrar</button>
+        </div>
+    </div>
+    
+    <a href="/viajes/crear" class="btn btn-success mb-3">Nuevo Viaje</a>
+    
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ruta</th>
+                    <th>Bus</th>
+                    <th>Salida</th>
+                    <th>Llegada</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                    <th>Asientos</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${#lists.isEmpty(viajes)}">
+                    <td colspan="9" class="text-center">No hay viajes registrados</td>
+                </tr>
+                <tr th:each="viaje : ${viajes}">
+                    <td th:text="${viaje.id}"></td>
+                    <td th:text="${viaje.ruta.origen + ' - ' + viaje.ruta.destino}"></td>
+                    <td th:text="${viaje.bus.placa}"></td>
+                    <td th:text="${#temporals.format(viaje.fechaHoraSalida, 'dd/MM/yyyy HH:mm')}"></td>
+                    <td th:text="${#temporals.format(viaje.fechaHoraLlegada, 'dd/MM/yyyy HH:mm')}"></td>
+                    <td th:text="${'S/ ' + #numbers.formatDecimal(viaje.precioBase, 1, 2)}"></td>
+                    <td>
+                        <span th:class="${'badge ' + 
+                            (viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).PROGRAMADO ? 'bg-primary' :
+                            (viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).EN_CURSO ? 'bg-success' :
+                            (viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).COMPLETADO ? 'bg-info' : 'bg-danger')))}"
+                              th:text="${viaje.estado}">
+                        </span>
+                    </td>
+                    <td th:text="${viaje.asientosDisponibles}"></td>
+                    <td>
+                        <div class="btn-group">
+                            <a th:href="@{/viajes/{id}/editar(id=${viaje.id})}" 
+                               class="btn btn-warning btn-sm"
+                               title="Editar">
+                                <i class="bi bi-pencil"></i> Editar
+                            </a>
+                            <form th:if="${viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).PROGRAMADO}"
+                                  th:action="@{/viajes/{id}/cancelar(id=${viaje.id})}" 
+                                  method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('¿Está seguro de que desea cancelar este viaje?')">
+                                    <i class="bi bi-x-circle"></i> Cancelar
+                                </button>
+                            </form>
+                            <form th:if="${viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).PROGRAMADO}"
+                                  th:action="@{/viajes/{id}/iniciar(id=${viaje.id})}" 
+                                  method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-success btn-sm"
+                                        onclick="return confirm('¿Está seguro de que desea iniciar este viaje?')">
+                                    <i class="bi bi-play-circle"></i> Iniciar
+                                </button>
+                            </form>
+                            <form th:if="${viaje.estado == T(com.examen3java.desarrolloweb.Entity.Viaje.EstadoViaje).EN_CURSO}"
+                                  th:action="@{/viajes/{id}/completar(id=${viaje.id})}" 
+                                  method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-info btn-sm"
+                                        onclick="return confirm('¿Está seguro de que desea completar este viaje?')">
+                                    <i class="bi bi-check-circle"></i> Completar
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function aplicarFiltros() {
+    const estado = document.getElementById('estadoFiltro').value;
+    const fecha = document.getElementById('fechaFiltro').value;
+    
+    let url = '/viajes?';
+    if (estado) url += `estado=${estado}&`;
+    if (fecha) url += `fecha=${fecha}`;
+    
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html> 

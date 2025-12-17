@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Quejas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="text-center mb-4" th:text="${queja.id == null ? 'Registrar Nueva Queja' : 'Gestionar Queja'}">Queja</h2>
+                
+                <form th:action="@{${queja.id == null ? '/quejas/crear' : '/quejas/' + queja.id + '/editar'}}"
+                      th:object="${queja}" method="post" class="needs-validation" novalidate>
+                    
+                    <input type="hidden" th:field="*{id}" />
+                    
+                    <div class="mb-3">
+                        <label for="cliente" class="form-label">Cliente:</label>
+                        <select class="form-select" id="cliente" th:field="*{cliente}" required>
+                            <option value="">Seleccione un cliente</option>
+                            <option th:each="cliente : ${clientes}"
+                                    th:value="${cliente.id}"
+                                    th:text="${cliente.nombres + ' ' + cliente.apellidos}">
+                            </option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione el cliente</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="viaje" class="form-label">Viaje Relacionado:</label>
+                        <select class="form-select" id="viaje" th:field="*{viaje}">
+                            <option value="">Seleccione un viaje (opcional)</option>
+                            <option th:each="viaje : ${viajes}"
+                                    th:value="${viaje.id}"
+                                    th:text="${viaje.ruta.origen + ' - ' + viaje.ruta.destino + ' (' + #temporals.format(viaje.fechaHoraSalida, 'dd/MM/yyyy HH:mm') + ')'}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tipo" class="form-label">Tipo de Queja:</label>
+                        <select class="form-select" id="tipo" th:field="*{tipo}" required>
+                            <option value="">Seleccione un tipo</option>
+                            <option value="SERVICIO">Servicio</option>
+                            <option value="RETRASO">Retraso</option>
+                            <option value="EQUIPAJE">Equipaje</option>
+                            <option value="HIGIENE">Higiene</option>
+                            <option value="SEGURIDAD">Seguridad</option>
+                            <option value="OTRO">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione el tipo de queja</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción de la Queja:</label>
+                        <textarea class="form-control" id="descripcion" 
+                                  th:field="*{descripcion}" rows="4" required
+                                  placeholder="Describa detalladamente la queja..."></textarea>
+                        <div class="invalid-feedback">Por favor describa la queja</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="prioridad" class="form-label">Prioridad:</label>
+                        <select class="form-select" id="prioridad" th:field="*{prioridad}" required>
+                            <option value="">Seleccione la prioridad</option>
+                            <option value="BAJA">Baja</option>
+                            <option value="MEDIA">Media</option>
+                            <option value="ALTA">Alta</option>
+                            <option value="URGENTE">Urgente</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione la prioridad</div>
+                    </div>
+
+                    <div th:if="${queja.id != null}" class="mb-3">
+                        <label for="estado" class="form-label">Estado:</label>
+                        <select class="form-select" id="estado" th:field="*{estado}" required>
+                            <option value="">Seleccione el estado</option>
+                            <option value="PENDIENTE">Pendiente</option>
+                            <option value="EN_PROCESO">En Proceso</option>
+                            <option value="RESUELTO">Resuelto</option>
+                            <option value="CERRADO">Cerrado</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione el estado</div>
+                    </div>
+
+                    <div th:if="${queja.id != null}" class="mb-3">
+                        <label for="respuesta" class="form-label">Respuesta:</label>
+                        <textarea class="form-control" id="respuesta" 
+                                  th:field="*{respuesta}" rows="3"
+                                  placeholder="Ingrese la respuesta a la queja..."></textarea>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <span th:text="${queja.id == null ? 'Registrar Queja' : 'Guardar Cambios'}">Guardar</span>
+                        </button>
+                        <a href="/quejas" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Validación de formulario Bootstrap
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+        // Validación de longitud mínima para la descripción
+        document.getElementById('descripcion').addEventListener('input', function(e) {
+            if (this.value.length < 20) {
+                this.setCustomValidity('La descripción debe tener al menos 20 caracteres')
+            } else {
+                this.setCustomValidity('')
+            }
+        });
+    </script>
+</body>
+</html> 

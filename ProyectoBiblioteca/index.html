@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Central de Lima</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <h1>📚 Biblioteca Central de Lima</h1>
+    <p>Catálogo oficial de libros disponibles para alquiler</p>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+
+    <!-- CATÁLOGO -->
+    <section class="catalogo">
+      <h2>📖 Catálogo de libros</h2>
+
+      <!-- BUSCADOR -->
+      <div class="buscador">
+        <input
+          type="text"
+          id="buscarLibro"
+          placeholder="🔍 Buscar por nombre o autor..."
+        >
+        <div class="catalogo-grid"></div>
+      </div>
+
+      <!-- FILTRO POR PRECIO -->
+      <div class="buscador">
+        <select id="filtroPrecio">
+          <option value="0">Todos los precios</option>
+          <option value="5">Hasta S/5</option>
+          <option value="6">Hasta S/6</option>
+          <option value="8">Hasta S/8</option>
+        </select>
+      </div>
+
+      <!-- ⚠️ IMPORTANTE: el JS llenará esto -->
+      <div class="catalogo-grid"></div>
+    </section>
+
+    <!-- LIBROS ALQUILADOS -->
+    <section class="panel">
+      <h2>📦 Libros alquilados</h2>
+      <ul id="listaAlquilados"></ul>
+      <p><strong>Total a pagar:</strong> S/ <span id="total">0</span></p>
+    </section>
+    <button id="vaciarAlquiler" class="btn-vaciar">
+  ❌ Vaciar alquiler
+</button>
+<button id="finalizarCompra" class="btn-finalizar">
+  💳 Finalizar compra
+</button>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <p>© 2025 Biblioteca Central de Lima | Alquiler de libros</p>
+  </footer>
+
+  <!-- JS externo (ORDEN CORRECTO) -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

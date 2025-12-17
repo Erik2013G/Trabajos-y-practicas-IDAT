@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Biblioteca Central de Lima</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: #e0f2f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box{
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      text-align: center;
+    }
+
+    input{
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button{
+      width: 100%;
+      padding: 10px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover{
+      background: #004d40;
+    }
+
+    .error{
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2>📚 Biblioteca Central de Lima</h2>
+    <p>Ingreso al sistema</p>
+
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="login()">Ingresar</button>
+
+    <p class="error" id="error"></p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
