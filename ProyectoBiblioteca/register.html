@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear usuario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body class="auth-body">
+
+  <div class="register-box">
+    <h2>➕ Crear nuevo usuario</h2>
+    <p>Registro en Biblioteca Central de Lima</p>
+
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <select id="regRol">
+      <option value="lector">Lector</option>
+      <option value="admin">Administrador</option>
+    </select>
+
+    <button class="btn-login" onclick="registrar()">Registrar</button>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <div class="links">
+      ¿Ya tienes cuenta?
+      <a href="login.html">Iniciar sesión</a>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -8,4 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Libros alquilados: ${data[usuario].length}</p>
     `;
   }
+  localStorage.setItem("usuario", "Erik");
+localStorage.setItem("login", "true");
+localStorage.setItem("rol", "admin"); // o "lector"
+
 });
