@@ -1,3 +1,7 @@
+if (!localStorage.getItem("login")) {
+  window.location.href = "login.html";
+}
+
 const contenedor = document.getElementById("historial");
 const historial = JSON.parse(localStorage.getItem("historialCompras")) || [];
 
@@ -5,59 +9,65 @@ if (historial.length === 0) {
   contenedor.innerHTML = "<p>No hay compras registradas.</p>";
 } else {
   historial.forEach((compra, index) => {
-
     let librosHTML = "";
-    compra.libros.forEach(id => {
-      const libro = libros.find(l => l.id === id);
-      if (libro) {
-        librosHTML += `<li>${libro.titulo} - S/ ${libro.precio}</li>`;
-      }
+
+    compra.libros.forEach(libro => {
+      librosHTML += `
+        <li>
+          ${libro.titulo} - ${libro.autor} - 
+          <strong>S/ ${libro.precio}</strong>
+        </li>
+      `;
     });
 
-    const card = document.createElement("div");
-    card.className = "libro";
+    contenedor.innerHTML += `
+      <div class="boleta">
+        <h3>🧾 Boleta #${index + 1}</h3>
+        <p><strong>Usuario:</strong> ${compra.usuario}</p>
+        <p><strong>Nombre:</strong> ${compra.nombre}</p>
+        <p><strong>Email:</strong> ${compra.email}</p>
+        <p><strong>Fecha:</strong> ${compra.fecha}</p>
 
-    card.innerHTML = `
-      <h3>🧾 Compra #${index + 1}</h3>
-      <p><strong>Fecha:</strong> ${compra.fecha}</p>
-      <ul>${librosHTML}</ul>
-      <p><strong>Total:</strong> S/ ${compra.total}.00</p>
-      <button onclick="imprimirBoleta(${index})">🖨 Imprimir</button>
+        <ul>${librosHTML}</ul>
+
+        <p class="total">
+          <strong>Total:</strong> S/ ${compra.total.toFixed(2)}
+        </p>
+
+        <button onclick="generarPDF(${index})">📄 Descargar PDF</button>
+      </div>
     `;
-
-    contenedor.appendChild(card);
   });
 }
 
-function imprimirBoleta(i) {
+// ================= PDF POR BOLETA =================
+function generarPDF(index) {
   const { jsPDF } = window.jspdf;
+  const compra = historial[index];
+
   const doc = new jsPDF();
+  let y = 10;
 
-  const compra = historial[i];
-  let y = 20;
-
-  doc.setFontSize(16);
-  doc.text("📚 Biblioteca Central de Lima", 20, y);
+  doc.setFontSize(14);
+  doc.text("🧾 BOLETA DE COMPRA", 10, y);
   y += 10;
 
-  doc.setFontSize(12);
-  doc.text(`Fecha: ${compra.fecha}`, 20, y);
-  y += 10;
+  doc.setFontSize(11);
+  doc.text(`Usuario: ${compra.usuario}`, 10, y); y += 7;
+  doc.text(`Nombre: ${compra.nombre}`, 10, y); y += 7;
+  doc.text(`Email: ${compra.email}`, 10, y); y += 7;
+  doc.text(`Fecha: ${compra.fecha}`, 10, y); y += 10;
 
-  doc.text("Libros alquilados:", 20, y);
-  y += 8;
+  doc.text("Libros alquilados:", 10, y);
+  y += 7;
 
-  compra.libros.forEach(id => {
-    const libro = libros.find(l => l.id === id);
-    if (libro) {
-      doc.text(`• ${libro.titulo} - S/ ${libro.precio}`, 25, y);
-      y += 8;
-    }
+  compra.libros.forEach(libro => {
+    doc.text(`• ${libro.titulo} - S/ ${libro.precio}`, 10, y);
+    y += 6;
   });
 
-  y += 10;
-  doc.setFontSize(14);
-  doc.text(`TOTAL: S/ ${compra.total}.00`, 20, y);
+  y += 5;
+  doc.text(`TOTAL: S/ ${compra.total.toFixed(2)}`, 10, y);
 
-  doc.save(`boleta_${i + 1}.pdf`);p
+  doc.save(`boleta_${compra.usuario}_${index + 1}.pdf`);
 }

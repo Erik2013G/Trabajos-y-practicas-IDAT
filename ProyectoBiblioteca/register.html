@@ -2,32 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Crear usuario</title>
+  <title>Registro | Biblioteca</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="auth.css">
 </head>
-
 <body class="auth-body">
-
   <div class="register-box">
     <h2>➕ Crear nuevo usuario</h2>
-    <p>Registro en Biblioteca Central de Lima</p>
 
     <input type="text" id="usuario" placeholder="Usuario">
     <input type="password" id="password" placeholder="Contraseña">
+    <input type="text" id="nombre" placeholder="Nombre completo">
+    <input type="date" id="fechaNacimiento" placeholder="Fecha de Nacimiento">
+    <input type="email" id="email" placeholder="Correo electrónico">
+    <input type="number" id="telefono" placeholder="Teléfono">
 
+    <label for="regRol">Selecciona el rol:</label>
     <select id="regRol">
       <option value="lector">Lector</option>
+      <option value="moderador">Moderador</option>
       <option value="admin">Administrador</option>
     </select>
 
     <button class="btn-login" onclick="registrar()">Registrar</button>
-
     <p id="mensaje" class="mensaje"></p>
 
     <div class="links">
-      ¿Ya tienes cuenta?
-      <a href="login.html">Iniciar sesión</a>
+      ¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a>
     </div>
   </div>
 

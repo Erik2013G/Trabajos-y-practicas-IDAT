@@ -5,50 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Central de Lima</title>
-
-    <!-- CSS externo -->
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-top">
-            <h1>📚 Biblioteca Central de Lima</h1>
-            <p>👤 Usuario: <strong id="usuario"></strong></p>
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">📚 Biblioteca Central de Lima</div>
+        <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Categorías</a>
+                <ul class="dropdown-menu" id="categoriasMenu"></ul>
+            </li>
+            <li><a href="#">Historial</a></li>
+        </ul>
+        <div class="user-dropdown">
+            <button id="btnUser">👤 Usuario</button>
+            <div id="userInfo" class="dropdown-content">
+                <p>Nombre: <span id="nombreUsuario"></span></p>
+                <p>Email: <span id="emailUsuario"></span></p>
+                <p>Fecha Nacimiento: <span id="fechaNacimientoUsuario"></span></p>
+                <p>Teléfono: <span id="telefonoUsuario"></span></p>
+            </div>
             <button class="btn-logout" onclick="logout()">🚪 Cerrar sesión</button>
-            <script src="auth.js"></script>
         </div>
-
-        <p>Catálogo oficial de libros disponibles para alquiler</p>
-    </header>
-
+    </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container">
+        <!-- BUSCADOR Y FILTRO -->
+        <div class="search-filter">
+            <input type="text" id="buscarLibro" placeholder="🔍 Buscar por nombre o autor...">
+            <select id="filtroPrecio">
+                <option value="0">Todos los precios</option>
+                <option value="5">Hasta S/5</option>
+                <option value="6">Hasta S/6</option>
+                <option value="8">Hasta S/8</option>
+            </select>
+        </div>
 
         <!-- CATÁLOGO -->
         <section class="catalogo">
-            <h2>📖 Catálogo de libros</h2>
-
-            <!-- BUSCADOR -->
-            <div class="buscador">
-                <input type="text" id="buscarLibro" placeholder="🔍 Buscar por nombre o autor...">
-                <div class="catalogo-grid"></div>
-            </div>
-
-            <!-- FILTRO POR PRECIO -->
-            <div class="buscador">
-                <select id="filtroPrecio">
-                    <option value="0">Todos los precios</option>
-                    <option value="5">Hasta S/5</option>
-                    <option value="6">Hasta S/6</option>
-                    <option value="8">Hasta S/8</option>
-                </select>
-            </div>
-
-            <!-- ⚠️ IMPORTANTE: el JS llenará esto -->
-            <div class="catalogo-grid"></div>
+            <h2>📖 Libros recomendados</h2>
+            <div class="catalogo-grid" id="catalogoGrid"></div>
         </section>
 
         <!-- LIBROS ALQUILADOS -->
@@ -57,27 +58,26 @@
             <ul id="listaAlquilados"></ul>
             <p><strong>Total a pagar:</strong> S/ <span id="total">0</span></p>
         </section>
-        <button id="vaciarAlquiler" class="btn-vaciar">
-            ❌ Vaciar alquiler
-        </button>
-        <button onclick="window.location.href='historial.html'" class="btn-historial">
-            📄 Ver historial
-        </button>
 
-        <button id="finalizarCompra" class="btn-finalizar">
-            💳 Finalizar compra
-        </button>
-        <button onclick="exportarPDF()" class="btn-finalizar"> 📄 Descargar boleta PDF </button>
+        <div class="buttons-panel">
+            <button id="vaciarAlquiler" class="btn-vaciar">❌ Vaciar alquiler</button>
+            <button onclick="window.location.href='historial.html'" class="btn-historial">📄 Ver historial</button>
+            <button id="finalizarCompra" class="btn-finalizar">💳 Finalizar compra</button>
+            <button id="generarPDF" class="btn-finalizar">📄 Descargar boleta PDF</button>
+        </div>
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="footer">
         <p>© 2025 Biblioteca Central de Lima | Alquiler de libros</p>
     </footer>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="auth.js"></script>
     <script src="catalogo.js"></script>
+    <script src="auth.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
 
 </body>
-
 </html>
